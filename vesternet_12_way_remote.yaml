@@ -1,247 +1,277 @@
 blueprint:
-  name: Vesternet 12 Way Switch Blueprint
-  description: >
-    'This blueprint requires Z2M to be using the Vesternet external converters as per 
-    https://www.vesternet.com/en-eu/collections/remote-controllers/products/vesternet-z-wave-remote-control-12-button
-    Heavily based on https://github.com/FunkeyFlo/ha-blueprints/blob/main/automations/ROB_200-007-0.yaml 
+  name: Z-Wave JS - Vesternet Wall Controller 12-Button 
+  description:
+    "Create automations for Vesternet 12-Button Scene Controller [VES-ZW-REM-010](https://www.vesternet.com/en-eu/collections/remote-controllers/products/vesternet-z-wave-remote-control-12-button) using the Z-Wave JS integration.
+    
+    The buttons are labelled assuming the LED is positioned at the top of the device.
 
+    The automations supports the following triggers for each button:
 
+    * Pressed
+ 
+    * Held Down
+ 
+    * Released
+ 
+    "
   domain: automation
   input:
-    remote:
-      name: Remote
-      description: Vesternet Switch to use (select Action sensor)
+    vesternet_device:
+      name: Vesternet 12-Button Controller
+      description: List of available Vesternet 8-Button devices.
       selector:
-        entity:
+        device:
           integration: zwave_js
-          domain: event
-          multiple: false
-    button_1_short:
-      name: Button 1 - short
+          manufacturer: Vesternet
+          model: VES-ZW-REM-010
+    I1_key_pressed:
+      name: First ON (I) Key Pressed
+      description: Action to run when first ON (I) button is pressed
       default: []
       selector:
         action: {}
-    button_2_short:
-      name: Button 2 - short
+    O1_key_pressed:
+      name: First OFF (O) Key Pressed
+      description: Action to run when first OFF (O) button is pressed
       default: []
       selector:
         action: {}
-    button_1_hold:
-      name: Button 1 - hold
+    I2_key_pressed:
+      name: Second ON (I) Key Pressed
+      description: Action to run when second ON (I) button is pressed
       default: []
       selector:
         action: {}
-    button_2_hold:
-      name: Button 2 - hold
+    O2_key_pressed:
+      name: Second OFF (O) Key Pressed
+      description: Action to run when second OFF (O) button is pressed
       default: []
       selector:
         action: {}
-    button_3_short:
-      name: Button 3 - short
+    I3_key_pressed:
+      name: Third ON (I) Key Pressed
+      description: Action to run when third ON (I) button is pressed
       default: []
       selector:
         action: {}
-    button_4_short:
-      name: Button 4 - short
+    O3_key_pressed:
+      name: Third OFF (O) Key Pressed
+      description: Action to run when third OFF (O) button is pressed
       default: []
       selector:
         action: {}
-    button_3_hold:
-      name: Button 3 - hold
+    I4_key_pressed:
+      name: Fourth ON (I) Key Pressed
+      description: Action to run when fourth ON (I) button is pressed
       default: []
       selector:
         action: {}
-    button_4_hold:
-      name: Button 4 - hold
+    O4_key_pressed:
+      name: Fourth OFF (O) Key Pressed
+      description: Action to run when fourth OFF (O) button is pressed
       default: []
       selector:
         action: {}
-    button_5_short:
-      name: Button 5 - short
+    O5_key_pressed:
+      name: Fifth OFF (O) Key Pressed
+      description: Action to run when fifth OFF (O) button is pressed
       default: []
       selector:
         action: {}
-    button_6_short:
-      name: Button 6 - short
+    I5_key_pressed:
+      name: Fifth ON (I) Key Pressed
+      description: Action to run when fifth ON (I) button is pressed
       default: []
       selector:
         action: {}
-    button_5_hold:
-      name: Button 5 - hold
+    O6_key_pressed:
+      name: Sixth OFF (O) Key Pressed
+      description: Action to run when Sixth OFF (O) button is pressed
       default: []
       selector:
         action: {}
-    button_6_hold:
-      name: Button 6 - hold
-      default: []
-      selector:
-        action: {}
-    button_7_short:
-      name: Button 7 - short
-      default: []
-      selector:
-        action: {}
-    button_8_short:
-      name: Button 8 - short
-      default: []
-      selector:
-        action: {}
-    button_7_hold:
-      name: Button 7 - hold
-      default: []
-      selector:
-        action: {}
-    button_8_hold:
-      name: Button 8 - hold
-      default: []
-      selector:
-        action: {}
-    button_9_hold:
-      name: Button 9 - hold
-      default: []
-      selector:
-        action: {}
-    button_9_short:
-      name: Button 9 - short
-      default: []
-      selector:
-        action: {}
-    button_10_hold:
-      name: Button 10 - hold
-      default: []
-      selector:
-        action: {}
-    button_10_short:
-      name: Button 10 - short
-      default: []
-      selector:
-        action: {}
-    button_11_hold:
-      name: Button 11 - hold
-      default: []
-      selector:
-        action: {}
-    button_11_short:
-      name: Button 11 - short
-      default: []
-      selector:
-        action: {}
-    button_12_hold:
-      name: Button 12 - hold
-      default: []
-      selector:
-        action: {}
-    button_12_short:
-      name: Button 12 - short
+    I6_key_pressed:
+      name: Sixth ON (I) Key Pressed
+      description: Action to run when Sixth ON (I) button is pressed
       default: []
       selector:
         action: {}
 
+    I1_key_held_down:
+      name: First ON (I) Held Down
+      description: Action to run when first ON (I) button is held down
+      default: []
+      selector:
+        action: {}
+    I1_key_released:
+      name: First ON (I) Released
+      description: Action to run when first ON (I) button is released after being held down.
+      default: []
+      selector:
+        action: {}
 
-  source_url: https://github.com/FunkeyFlo/ha-blueprints/blob/main/automations/ROB_200-007-0.yaml
+    O1_key_held_down:
+      name: First OFF (O) Held Down
+      description: Action to run when first OFF (O) button is held down
+      default: []
+      selector:
+        action: {}
+    O1_key_released:
+      name: First OFF (O) Released
+      description: Action to run when first OFF (O) button is released after being held down.
+      default: []
+      selector:
+        action: {}
+
+    I2_key_held_down:
+      name: Second ON (I) Held Down
+      description: Action to run when second ON (I) button is held down
+      default: []
+      selector:
+        action: {}
+    I2_key_released:
+      name: Second ON (I) Released
+      description: Action to run when second ON (I) button is released after being held down.
+      default: []
+      selector:
+        action: {}
+
+    O2_key_held_down:
+      name: Second OFF (O) Held Down
+      description: Action to run when second OFF (O) button is held down
+      default: []
+      selector:
+        action: {}
+    O2_key_released:
+      name: Second OFF (O) Released
+      description: Action to run when second OFF (O) button is released after being held down.
+      default: []
+      selector:
+        action: {}
+
+    I3_key_held_down:
+      name: Third ON (I) Held Down
+      description: Action to run when third ON (I) button is held down
+      default: []
+      selector:
+        action: {}
+    I3_key_released:
+      name: Third ON (I) Released
+      description: Action to run when third ON (I) button is released after being held down.
+      default: []
+      selector:
+        action: {}
+
+    O3_key_held_down:
+      name: Third OFF (O) Held Down
+      description: Action to run when third OFF (O) button is held down
+      default: []
+      selector:
+        action: {}
+    O3_key_released:
+      name: Third OFF (O) Released
+      description: Action to run when third OFF (O) button is released after being held down.
+      default: []
+      selector:
+        action: {}
+
+    I4_key_held_down:
+      name: Fourth ON (I) Held Down
+      description: Action to run when fourth ON (I) button is held down
+      default: []
+      selector:
+        action: {}
+    I4_key_released:
+      name: Fourth ON (I) Released
+      description: Action to run when fourth ON (I) button is released after being held down.
+      default: []
+      selector:
+        action: {}
+
+    O4_key_held_down:
+      name: Fourth OFF (O) Held Down
+      description: Action to run when fourth OFF (O) button is held down
+      default: []
+      selector:
+        action: {}
+    O4_key_released:
+      name: Fourth OFF (O) Released
+      description: Action to run when fourth OFF (O) button is released after being held down.
+      default: []
+      selector:
+        action: {}
+
+  source_url: https://github.com/beerygaz/ha-bp-VES-ZW-WAL-009/blob/main/VES-ZW-WAL-009.yaml
 mode: single
 max_exceeded: silent
+variables:
+  device_id: !input "vesternet_device"
 trigger:
-- platform: state
-  entity_id: !input remote
-
+  - platform: event
+    event_type: zwave_js_value_notification
+condition: "{{ trigger.event.data.device_id == device_id }}"
 action:
-- variables:
-    command: '{{ trigger.to_state.state }}'
-- choose:
+  - variables:
+      property_key_name: "{{ trigger.event.data.property_key_name }}"
+      property_name: "{{ trigger.event.data.property_name }}"
+      label: "{{ trigger.event.data.label }}"
+      command_class_name: "{{ trigger.event.data.command_class_name }}"
+      value: "{{ trigger.event.data.value }}"
+      node_id: "{{ trigger.event.data.node_id }}"
+  - service: logbook.log
+    data:
+      name: Z-Wave JS
+      message:
+        "received event from node {{node_id}}: {{ command_class_name }} - {{
+        value }} - {{ label }}"
+  - choose:
+      - conditions: "{{ property_name == 'scene' and property_key_name == '001' and value == 'KeyPressed' }}"
+        sequence: !input I1_key_pressed
+      - conditions: "{{ property_name == 'scene' and property_key_name == '002' and value == 'KeyPressed' }}"
+        sequence: !input O1_key_pressed
+      - conditions: "{{ property_name == 'scene' and property_key_name == '003' and value == 'KeyPressed' }}"
+        sequence: !input I2_key_pressed
+      - conditions: "{{ property_name == 'scene' and property_key_name == '004' and value == 'KeyPressed' }}"
+        sequence: !input O2_key_pressed
+      - conditions: "{{ property_name == 'scene' and property_key_name == '005' and value == 'KeyPressed' }}"
+        sequence: !input I3_key_pressed
+      - conditions: "{{ property_name == 'scene' and property_key_name == '006' and value == 'KeyPressed' }}"
+        sequence: !input O3_key_pressed
+      - conditions: "{{ property_name == 'scene' and property_key_name == '007' and value == 'KeyPressed' }}"
+        sequence: !input I4_key_pressed
+      - conditions: "{{ property_name == 'scene' and property_key_name == '008' and value == 'KeyPressed' }}"
+        sequence: !input O4_key_pressed
 
-  - conditions:
-    - '{{ command == ''button_1_click'' }}'
-    sequence: !input button_1_short
+      - conditions: "{{ property_name == 'scene' and property_key_name == '001' and value == 'KeyHeldDown' }}"
+        sequence: !input I1_key_held_down
+      - conditions: "{{ property_name == 'scene' and property_key_name == '002' and value == 'KeyHeldDown' }}"
+        sequence: !input O1_key_held_down
+      - conditions: "{{ property_name == 'scene' and property_key_name == '003' and value == 'KeyHeldDown' }}"
+        sequence: !input I2_key_held_down
+      - conditions: "{{ property_name == 'scene' and property_key_name == '004' and value == 'KeyHeldDown' }}"
+        sequence: !input O2_key_held_down
+      - conditions: "{{ property_name == 'scene' and property_key_name == '005' and value == 'KeyHeldDown' }}"
+        sequence: !input I3_key_held_down
+      - conditions: "{{ property_name == 'scene' and property_key_name == '006' and value == 'KeyHeldDown' }}"
+        sequence: !input O3_key_held_down
+      - conditions: "{{ property_name == 'scene' and property_key_name == '007' and value == 'KeyHeldDown' }}"
+        sequence: !input I4_key_held_down
+      - conditions: "{{ property_name == 'scene' and property_key_name == '008' and value == 'KeyHeldDown' }}"
+        sequence: !input O4_key_held_down
 
-  - conditions:
-    - '{{ command == ''button_2_click'' }}'
-    sequence: !input button_2_short
-
-  - conditions:
-    - '{{ command == ''button_3_click'' }}'
-    sequence: !input button_3_short
-
-  - conditions:
-    - '{{ command == ''button_4_click'' }}'
-    sequence: !input button_4_short
-
-  - conditions:
-    - '{{ command == ''button_5_click'' }}'
-    sequence: !input button_5_short
-
-  - conditions:
-    - '{{ command == ''button_6_click'' }}'
-    sequence: !input button_6_short
-
-  - conditions:
-    - '{{ command == ''button_7_click'' }}'
-    sequence: !input button_7_short
-    
-  - conditions:
-    - '{{ command == ''button_8_click'' }}'
-    sequence: !input button_8_short
-
-  - conditions:
-    - '{{ command == ''button_9_click'' }}'
-    sequence: !input button_9_short
-
-  - conditions:
-    - '{{ command == ''button_10_click'' }}'
-    sequence: !input button_10_short
-
-  - conditions:
-    - '{{ command == ''button_11_click'' }}'
-    sequence: !input button_11_short
-
-  - conditions:
-    - '{{ command == ''button_12_click'' }}'
-    sequence: !input button_12_short
-
-  - conditions:
-    - '{{ command == ''button_1_hold'' }}'
-    sequence: !input button_1_hold
-
-  - conditions:
-    - '{{ command == ''button_2_hold'' }}'
-    sequence: !input button_2_hold
-
-  - conditions:
-    - '{{ command == ''button_3_hold'' }}'
-    sequence: !input button_3_hold
-
-  - conditions:
-    - '{{ command == ''button_4_hold'' }}'
-    sequence: !input button_4_hold
-
-  - conditions:
-    - '{{ command == ''button_5_hold'' }}'
-    sequence: !input button_5_hold
-
-  - conditions:
-    - '{{ command == ''button_6_hold'' }}'
-    sequence: !input button_6_hold
-
-  - conditions:
-    - '{{ command == ''button_7_hold'' }}'
-    sequence: !input button_7_hold
-
-  - conditions:
-    - '{{ command == ''button_8_hold'' }}'
-    sequence: !input button_8_hold
-
-  - conditions:
-    - '{{ command == ''button_9_hold'' }}'
-    sequence: !input button_9_hold
-
-  - conditions:
-    - '{{ command == ''button_10_hold'' }}'
-    sequence: !input button_10_hold
-
-  - conditions:
-    - '{{ command == ''button_11_hold'' }}'
-    sequence: !input button_11_hold
-
-  - conditions:
-    - '{{ command == ''button_12_hold'' }}'
-    sequence: !input button_12_hold
+      - conditions: "{{ property_name == 'scene' and property_key_name == '001' and value == 'KeyReleased' }}"
+        sequence: !input I1_key_released
+      - conditions: "{{ property_name == 'scene' and property_key_name == '002' and value == 'KeyReleased' }}"
+        sequence: !input O1_key_released
+      - conditions: "{{ property_name == 'scene' and property_key_name == '003' and value == 'KeyReleased' }}"
+        sequence: !input I2_key_released
+      - conditions: "{{ property_name == 'scene' and property_key_name == '004' and value == 'KeyReleased' }}"
+        sequence: !input O2_key_released
+      - conditions: "{{ property_name == 'scene' and property_key_name == '005' and value == 'KeyReleased' }}"
+        sequence: !input I3_key_released
+      - conditions: "{{ property_name == 'scene' and property_key_name == '006' and value == 'KeyReleased' }}"
+        sequence: !input O3_key_released
+      - conditions: "{{ property_name == 'scene' and property_key_name == '007' and value == 'KeyReleased' }}"
+        sequence: !input I4_key_released
+      - conditions: "{{ property_name == 'scene' and property_key_name == '008' and value == 'KeyReleased' }}"
+        sequence: !input O4_key_released
