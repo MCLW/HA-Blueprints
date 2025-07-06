@@ -13,7 +13,7 @@ blueprint:
       description: Vesternet Switch to use (select Action sensor)
       selector:
         entity:
-          integration: zwave-js
+          integration: zwave_js
           domain: sensor
           multiple: false
     button_1_short:
