@@ -1,0 +1,228 @@
+blueprint:
+  name: Vesternet 12 Way Switch Blueprint
+  description: >
+    'This blueprint requires Z2M to be using the Vesternet external converters as per 
+    https://www.vesternet.com/en-eu/collections/remote-controllers/products/vesternet-z-wave-remote-control-12-button
+    Heavily based on https://github.com/FunkeyFlo/ha-blueprints/blob/main/automations/ROB_200-007-0.yaml 
+
+
+  domain: automation
+  input:
+    remote:
+      name: Remote
+      description: Vesternet Switch to use (select Action sensor)
+      selector:
+        entity:
+          integration: zwave-js
+          domain: sensor
+          multiple: false
+    button_1_short:
+      name: Button 1 - short
+      default: []
+      selector:
+        action: {}
+    button_2_short:
+      name: Button 2 - short
+      default: []
+      selector:
+        action: {}
+    button_1_hold:
+      name: Button 1 - hold
+      default: []
+      selector:
+        action: {}
+    button_2_hold:
+      name: Button 2 - hold
+      default: []
+      selector:
+        action: {}
+    button_3_short:
+      name: Button 3 - short
+      default: []
+      selector:
+        action: {}
+    button_4_short:
+      name: Button 4 - short
+      default: []
+      selector:
+        action: {}
+    button_3_hold:
+      name: Button 3 - hold
+      default: []
+      selector:
+        action: {}
+    button_4_hold:
+      name: Button 4 - hold
+      default: []
+      selector:
+        action: {}
+
+    button_5_short:
+      name: Button 5 - short
+      default: []
+      selector:
+        action: {}
+    button_6_short:
+      name: Button 6 - short
+      default: []
+      selector:
+        action: {}
+    button_5_hold:
+      name: Button 5 - hold
+      default: []
+      selector:
+        action: {}
+    button_6_hold:
+      name: Button 6 - hold
+      default: []
+      selector:
+        action: {}
+    button_7_short:
+      name: Button 7 - short
+      default: []
+      selector:
+        action: {}
+    button_8_short:
+      name: Button 8 - short
+      default: []
+      selector:
+        action: {}
+    button_7_hold:
+      name: Button 7 - hold
+      default: []
+      selector:
+        action: {}
+    button_8_hold:
+      name: Button 8 - hold
+      default: []
+      selector:
+        action: {}
+    button_9_hold:
+      name: Button 8 - hold
+      default: []
+      selector:
+        action: {}
+    button_10_hold:
+      name: Button 8 - hold
+      default: []
+      selector:
+        action: {}
+    button_11_hold:
+      name: Button 8 - hold
+      default: []
+      selector:
+        action: {}
+    button_12_hold:
+      name: Button 8 - hold
+      default: []
+      selector:
+        action: {}
+
+
+  source_url: https://github.com/FunkeyFlo/ha-blueprints/blob/main/automations/ROB_200-007-0.yaml
+mode: single
+max_exceeded: silent
+trigger:
+- platform: state
+  entity_id: !input remote
+
+action:
+- variables:
+    command: '{{ trigger.to_state.state }}'
+- choose:
+
+  - conditions:
+    - '{{ command == ''button_1_click'' }}'
+    sequence: !input button_1_short
+
+  - conditions:
+    - '{{ command == ''button_2_click'' }}'
+    sequence: !input button_2_short
+
+  - conditions:
+    - '{{ command == ''button_3_click'' }}'
+    sequence: !input button_3_short
+
+  - conditions:
+    - '{{ command == ''button_4_click'' }}'
+    sequence: !input button_4_short
+
+  - conditions:
+    - '{{ command == ''button_5_click'' }}'
+    sequence: !input button_5_short
+
+  - conditions:
+    - '{{ command == ''button_6_click'' }}'
+    sequence: !input button_6_short
+
+  - conditions:
+    - '{{ command == ''button_7_click'' }}'
+    sequence: !input button_7_short
+    
+  - conditions:
+    - '{{ command == ''button_8_click'' }}'
+    sequence: !input button_8_short
+
+  - conditions:
+    - '{{ command == ''button_9_click'' }}'
+    sequence: !input button_9_short
+
+  - conditions:
+    - '{{ command == ''button_10_click'' }}'
+    sequence: !input button_10_short
+
+  - conditions:
+    - '{{ command == ''button_11_click'' }}'
+    sequence: !input button_11_short
+
+  - conditions:
+    - '{{ command == ''button_12_click'' }}'
+    sequence: !input button_12_short
+
+  - conditions:
+    - '{{ command == ''button_1_hold'' }}'
+    sequence: !input button_1_hold
+
+  - conditions:
+    - '{{ command == ''button_2_hold'' }}'
+    sequence: !input button_2_hold
+
+  - conditions:
+    - '{{ command == ''button_3_hold'' }}'
+    sequence: !input button_3_hold
+
+  - conditions:
+    - '{{ command == ''button_4_hold'' }}'
+    sequence: !input button_4_hold
+
+  - conditions:
+    - '{{ command == ''button_5_hold'' }}'
+    sequence: !input button_5_hold
+
+  - conditions:
+    - '{{ command == ''button_6_hold'' }}'
+    sequence: !input button_6_hold
+
+  - conditions:
+    - '{{ command == ''button_7_hold'' }}'
+    sequence: !input button_7_hold
+
+  - conditions:
+    - '{{ command == ''button_8_hold'' }}'
+    sequence: !input button_8_hold
+
+  - conditions:
+    - '{{ command == ''button_9_hold'' }}'
+    sequence: !input button_9_hold
+
+  - conditions:
+    - '{{ command == ''button_10_hold'' }}'
+    sequence: !input button_10_hold
+
+  - conditions:
+    - '{{ command == ''button_11_hold'' }}'
+    sequence: !input button_11_hold
+
+  - conditions:
+    - '{{ command == ''button_12_hold'' }}'
+    sequence: !input button_12_hold
