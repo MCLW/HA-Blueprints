@@ -56,7 +56,6 @@ blueprint:
       default: []
       selector:
         action: {}
-
     button_5_short:
       name: Button 5 - short
       default: []
@@ -98,22 +97,42 @@ blueprint:
       selector:
         action: {}
     button_9_hold:
-      name: Button 8 - hold
+      name: Button 9 - hold
+      default: []
+      selector:
+        action: {}
+    button_9_short:
+      name: Button 9 - short
       default: []
       selector:
         action: {}
     button_10_hold:
-      name: Button 8 - hold
+      name: Button 10 - hold
+      default: []
+      selector:
+        action: {}
+    button_10_short:
+      name: Button 10 - short
       default: []
       selector:
         action: {}
     button_11_hold:
-      name: Button 8 - hold
+      name: Button 11 - hold
+      default: []
+      selector:
+        action: {}
+    button_11_short:
+      name: Button 11 - short
       default: []
       selector:
         action: {}
     button_12_hold:
-      name: Button 8 - hold
+      name: Button 12 - hold
+      default: []
+      selector:
+        action: {}
+    button_12_short:
+      name: Button 12 - short
       default: []
       selector:
         action: {}
