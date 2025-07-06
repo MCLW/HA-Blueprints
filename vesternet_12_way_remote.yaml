@@ -14,7 +14,7 @@ blueprint:
       selector:
         entity:
           integration: zwave_js
-          domain: sensor
+          domain: event
           multiple: false
     button_1_short:
       name: Button 1 - short
