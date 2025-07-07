@@ -201,7 +201,33 @@ blueprint:
       selector:
         action: {}
 
-  source_url: https://github.com/beerygaz/ha-bp-VES-ZW-WAL-009/blob/main/VES-ZW-WAL-009.yaml
+    I5_key_held_down:
+      name: Fifth ON (I) Held Down
+      description: Action to run when fifth ON (I) button is held down
+      default: []
+      selector:
+        action: {}
+    I5_key_released:
+      name: Fifth ON (I) Released
+      description: Action to run when fifth ON (I) button is released after being held down.
+      default: []
+      selector:
+        action: {}
+
+    O5_key_held_down:
+      name: Fifth OFF (O) Held Down
+      description: Action to run when fifth OFF (O) button is held down
+      default: []
+      selector:
+        action: {}
+    O5_key_released:
+      name: Fifth OFF (O) Released
+      description: Action to run when fifth OFF (O) button is released after being held down.
+      default: []
+      selector:
+        action: {}
+
+  source_url: https://github.com/MCLW/HA-Blueprints/edit/main/vesternet_12_way_remote.yaml
 mode: single
 max_exceeded: silent
 variables:
@@ -241,6 +267,14 @@ action:
         sequence: !input I4_key_pressed
       - conditions: "{{ property_name == 'scene' and property_key_name == '008' and value == 'KeyPressed' }}"
         sequence: !input O4_key_pressed
+      - conditions: "{{ property_name == 'scene' and property_key_name == '009' and value == 'KeyPressed' }}"
+        sequence: !input I5_key_pressed
+      - conditions: "{{ property_name == 'scene' and property_key_name == '010' and value == 'KeyPressed' }}"
+        sequence: !input O5_key_pressed
+      - conditions: "{{ property_name == 'scene' and property_key_name == '011' and value == 'KeyPressed' }}"
+        sequence: !input I6_key_pressed
+      - conditions: "{{ property_name == 'scene' and property_key_name == '012' and value == 'KeyPressed' }}"
+        sequence: !input O6_key_pressed
 
       - conditions: "{{ property_name == 'scene' and property_key_name == '001' and value == 'KeyHeldDown' }}"
         sequence: !input I1_key_held_down
@@ -258,6 +292,14 @@ action:
         sequence: !input I4_key_held_down
       - conditions: "{{ property_name == 'scene' and property_key_name == '008' and value == 'KeyHeldDown' }}"
         sequence: !input O4_key_held_down
+      - conditions: "{{ property_name == 'scene' and property_key_name == '009' and value == 'KeyHeldDown' }}"
+        sequence: !input I5_key_held_down
+      - conditions: "{{ property_name == 'scene' and property_key_name == '010' and value == 'KeyHeldDown' }}"
+        sequence: !input O5_key_held_down
+      - conditions: "{{ property_name == 'scene' and property_key_name == '011' and value == 'KeyHeldDown' }}"
+        sequence: !input I6_key_held_down
+      - conditions: "{{ property_name == 'scene' and property_key_name == '012' and value == 'KeyHeldDown' }}"
+        sequence: !input O6_key_held_down
 
       - conditions: "{{ property_name == 'scene' and property_key_name == '001' and value == 'KeyReleased' }}"
         sequence: !input I1_key_released
@@ -275,3 +317,11 @@ action:
         sequence: !input I4_key_released
       - conditions: "{{ property_name == 'scene' and property_key_name == '008' and value == 'KeyReleased' }}"
         sequence: !input O4_key_released
+      - conditions: "{{ property_name == 'scene' and property_key_name == '009' and value == 'KeyReleased' }}"
+        sequence: !input I5_key_released
+      - conditions: "{{ property_name == 'scene' and property_key_name == '010' and value == 'KeyReleased' }}"
+        sequence: !input O5_key_released
+      - conditions: "{{ property_name == 'scene' and property_key_name == '011' and value == 'KeyReleased' }}"
+        sequence: !input I6_key_released
+      - conditions: "{{ property_name == 'scene' and property_key_name == '012' and value == 'KeyReleased' }}"
+        sequence: !input O6_key_released
