@@ -227,6 +227,32 @@ blueprint:
       selector:
         action: {}
 
+    I6_key_held_down:
+      name: Sixth ON (I) Held Down
+      description: Action to run when Sixth ON (I) button is held down
+      default: []
+      selector:
+        action: {}
+    I6_key_released:
+      name: Sixth ON (I) Released
+      description: Action to run when Sixth ON (I) button is released after being held down.
+      default: []
+      selector:
+        action: {}
+
+    O6_key_held_down:
+      name: Sixth OFF (O) Held Down
+      description: Action to run when Sixth OFF (O) button is held down
+      default: []
+      selector:
+        action: {}
+    O6_key_released:
+      name: Sixth OFF (O) Released
+      description: Action to run when Sixth OFF (O) button is released after being held down.
+      default: []
+      selector:
+        action: {}
+
   source_url: https://github.com/MCLW/HA-Blueprints/edit/main/vesternet_12_way_remote.yaml
 mode: single
 max_exceeded: silent
