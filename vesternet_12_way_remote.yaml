@@ -18,7 +18,7 @@ blueprint:
   input:
     vesternet_device:
       name: Vesternet 12-Button Controller
-      description: List of available Vesternet 8-Button devices.
+      description: List of available Vesternet 12-Button devices.
       selector:
         device:
           integration: zwave_js
